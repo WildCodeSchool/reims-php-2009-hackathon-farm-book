@@ -2,9 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body {   
+body {
     background-color:#DCEBEF;
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
@@ -73,21 +73,20 @@ ul {
 li {
     margin: 1rem;
     box-sizing: border-box;
-    text-align: center;        
+    text-align: center;
 }
-/* fin CSS index vehicle */ 
+/* fin CSS index vehicle */
 
 .logoimage {
     margin-top: 200px ;
-    
 }
 
 .logoimage p{
     text-align: center;
-    font-size: 80px ;   
+    font-size: 80px ;
 }
 
-.logincontainer{   
+.logincontainer{
     display : flex ;
     flex-direction : column;
     align-items: center ;

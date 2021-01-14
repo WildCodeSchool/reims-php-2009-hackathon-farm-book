@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Vehicle;
 use App\Form\VehicleType;
-use App\Repository\UserRepository;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +28,7 @@ class VehicleController extends AbstractController
     /**
      * @Route("/new", name="vehicle_new", methods={"GET","POST"})
      */
-    public function new(Request $request, UserRepository $userRepository): Response
+    public function new(Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $vehicle = new Vehicle();
@@ -38,7 +37,7 @@ class VehicleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $vehicle->setUser($userRepository->find($this->getUser()->getId() ));
+            $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);
             $entityManager->flush();
 

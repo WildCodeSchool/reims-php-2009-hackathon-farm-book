@@ -46,6 +46,7 @@ class VehicleController extends AbstractController
                 $pictureFileName = $fileUploader->upload($pictureFile);
                 $vehicle->setPicture($pictureFileName);
             }
+
             $entityManager = $this->getDoctrine()->getManager();
             $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);

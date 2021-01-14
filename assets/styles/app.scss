@@ -1,6 +1,25 @@
 @import 'variables.scss';
 
-body {
-    background-color: $wild-color;
+body {   
+    background-color: #008037 ;
     color: $light-color;
+    margin: 0;
+    padding: 0;
+}
+
+.logoimage {
+    margin-top: 200px ;
+    
+}
+
+.logoimage p{
+    text-align: center;
+    font-size: 80px ;   
+}
+
+.logincontainer{   
+    display : flex ;
+    flex-direction : column;
+    align-items: center ;
+    font-size: 1.5em ;
 }

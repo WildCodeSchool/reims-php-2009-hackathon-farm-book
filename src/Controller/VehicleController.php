@@ -45,12 +45,12 @@ class VehicleController extends AbstractController
             if ($pictureFile) {
                 $pictureFileName = $fileUploader->upload($pictureFile);
                 $vehicle->setPicture($pictureFileName);
-
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);
             $entityManager->flush();
-            }
+            
 
             return $this->redirectToRoute('vehicle_index');
         }

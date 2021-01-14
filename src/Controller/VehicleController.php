@@ -30,12 +30,14 @@ class VehicleController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $vehicle = new Vehicle();
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);
             $entityManager->flush();
 

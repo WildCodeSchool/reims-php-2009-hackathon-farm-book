@@ -4,6 +4,13 @@
 
 {% block body %}
     <h1>Vehicle</h1>
+    <div>
+    {% if vehicle.picture == NULL  %}
+            <img class='VehiclePhoto' src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
+    {% else %}    
+            <img class="vehicle-pic" src="{{ asset('/uploads/' ~ vehicle.picture) }}" />
+    {% endif %}
+    </div>
 
     <table class="table">
         <tbody>
@@ -18,7 +25,7 @@
             <tr>
                 <th>Buyprice</th>
                 <td>{{ vehicle.buyprice }}</td>
-            </tr>
+            </tr>           
             <tr>
                 <th>Sellprice</th>
                 <td>{{ vehicle.sellprice }}</td>
@@ -33,6 +40,12 @@
             </tr>
         </tbody>
     </table>
+    <p>
+    Coût à l'heure :  {% set hourcost =( ((vehicle.buyprice - vehicle.sellprice) / vehicle.lifetime) / vehicle.timeworkingbyyear ) %}{{ hourcost}}
+    </p>
+    <p>
+    Coût à l'heure avec MO :  {% set hourcost =( hourcost + 18 )  %} {{ hourcost}}
+    </p>
 
     <a href="{{ path('vehicle_index') }}">back to list</a>
 

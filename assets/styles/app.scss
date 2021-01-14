@@ -1,7 +1,6 @@
 @import 'variables.scss';
 
-body {
-    background-color: $wild-color;
+body { 
     color: $light-color;
     margin: 0;
     padding: 0;
@@ -44,9 +43,13 @@ body {
 }
 
 .picture-vehicle-index{
-    background-color: wheat;
-    height: 400%;
-    width: 400%;
+    height: 100%;
+    width: 100%;
+}
+
+.picture-vehicle-index img{
+    height: 35rem;
+    width: 35rem;
 }
 
 .example-wrapper {
@@ -68,4 +71,22 @@ li {
     margin: 1rem;
     box-sizing: border-box;
     text-align: center;        
+}
+/* fin CSS index vehicle */ 
+
+.logoimage {
+    margin-top: 200px ;
+    
+}
+
+.logoimage p{
+    text-align: center;
+    font-size: 80px ;   
+}
+
+.logincontainer{   
+    display : flex ;
+    flex-direction : column;
+    align-items: center ;
+    font-size: 1.5em ;
 }

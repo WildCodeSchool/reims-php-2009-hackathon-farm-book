@@ -13,12 +13,14 @@
 <div class="example-wrapper">
     <ul>
     {% for vehicle in vehicles %}
-        <li class="tuile-vehicle-index"><a style="text-decoration:none; color: white;"href="{{ path('vehicle_show', {id: vehicle.id}) }}">{{ vehicle.name }}</a><br/>
-        {% if vehicle.picture == NULL  %}
-            <img class='picture-vehicle-index' src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
-        {% else %}
-            <img class="picture-vehicle-index" src="{{ asset('/uploads/' ~ vehicle.picture) }}"/>
+        <li class="tuile-vehicle-index"><a style="text-decoration:none; color: white; font-size: 2.5rem;"href="{{ path('vehicle_show', {id: vehicle.id}) }}">{{ vehicle.name }}</a>
+    <div class='picture-vehicle-index'>
+    {% if vehicle.picture == NULL  %}
+            <img src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
+    {% else %}
+            <img src="{{ asset('/uploads/' ~ vehicle.picture) }}"/>
     {% endif %}
+    </div>
     </li>
     {% endfor %}
     </ul>

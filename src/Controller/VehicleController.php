@@ -75,12 +75,18 @@ class VehicleController extends AbstractController
     /**
      * @Route("/{id}/edit", name="vehicle_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Vehicle $vehicle): Response
+    public function edit(Request $request, Vehicle $vehicle, FileUploader $fileUploader): Response
     {
+        $vehicle->setPicture(new File($this->getParameter('image_directory').'/'.$vehicle->getPicture()));
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pictureFile = $form->get('picture')->getData();
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $vehicle->setPicture($pictureFileName);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('vehicle_index');

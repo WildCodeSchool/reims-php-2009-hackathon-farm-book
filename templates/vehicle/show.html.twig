@@ -4,6 +4,13 @@
 
 {% block body %}
     <h1>Vehicle</h1>
+    <div>
+    {% if vehicle.picture == NULL  %}
+            <img class='VehiclePhoto' src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
+    {% else %}    
+            <img class="vehicle-pic" src="{{ asset('/uploads/' ~ vehicle.picture) }}" />
+    {% endif %}
+    </div>
 
     <table class="table">
         <tbody>

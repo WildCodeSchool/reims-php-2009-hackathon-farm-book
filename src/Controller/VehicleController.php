@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Vehicle;
 use App\Form\VehicleType;
 use App\Repository\VehicleRepository;
-use App\Service\FileUploader;
+use App\Services\FileUploader;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
@@ -51,7 +51,6 @@ class VehicleController extends AbstractController
             $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);
             $entityManager->flush();
-            
 
             return $this->redirectToRoute('vehicle_index');
         }
@@ -80,7 +79,7 @@ class VehicleController extends AbstractController
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {            
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('vehicle_index');
@@ -97,13 +96,12 @@ class VehicleController extends AbstractController
      */
     public function delete(Request $request, Vehicle $vehicle): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$vehicle->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $vehicle->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($vehicle);
             $entityManager->flush();
-            $fileToDelete = __DIR__.'../public/uploads/'. $vehicle->getPicture();
-            if(file_exists($fileToDelete))
-            {
+            $fileToDelete = __DIR__ . '../public/uploads/' . $vehicle->getPicture();
+            if (file_exists($fileToDelete)) {
                 unlink($fileToDelete);
             }
         }

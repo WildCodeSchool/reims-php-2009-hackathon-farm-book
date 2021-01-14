@@ -3,35 +3,47 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<div class='loginpage'>
-<div class='logoimage'>
-<p>FarmBook</p>
-</div>
+
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        <div class="logged">
+            {# Vous êtes connecté sous : {{ app.user.username }} #}
+            <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
     {% endif %}
-    <div class='logincontainer'>
 
-    <h1 class="h3 mb-3 font-weight-normal">Connectez vous :</h1>
-    <div class='emailcontainer'>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    </div>
-    <div class='passwordcontainer'>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+    <div class="containerlogos">
+        <div class="logofarmbook"> <img src="{{ asset('/uploads/logo.png') }}" alt="logo1">
+        </div>
+        <div class="logopcea"><img src="{{ asset('/uploads/logopcea.png') }}" alt="vehicle">
+        </div>
+     </div>
+    
+    
+    
+    <div class="registerbutton">
+    <a href="{{ path('app_register') }}"><button class="btn btn-lg btn-primary" type="submit">
+        Créer un compte
+    </button></a>
+     </div>
+    
+
+
+    <div class="login">   
+
+    {# <label for="inputEmail">Email</label> #}
+    <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus placeholder="Username" id="username">
+
+    {# <label for="inputPassword">Password</label> #}
+    <input type="password" name="password" id="inputPassword" placeholder="password" id="password" class="form-control" required>
 
     <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
-    </div>
-    
+           value="{{ csrf_token('authenticate') }}"
+    >
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -43,12 +55,13 @@
             </label>
         </div>
     #}
-    <div class='buttoncontainer'>
-    <button class="btn btn-lg btn-primary" type="submit">
+     <input type="submit" value="Sign In">
+    </div>
+    <div class="shadow"></div>
+
+    {# <button class="btn btn-lg btn-primary" type="submit">
         Sign in
-    </button>
-    </div>
-    </div>
+    </button> #}
+
 </form>
-</div>
 {% endblock %}

@@ -42,6 +42,17 @@ class Vehicle
      */
     private $timeworkingbyyear;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="vehicles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +114,30 @@ class Vehicle
     public function setTimeworkingbyyear(int $timeworkingbyyear): self
     {
         $this->timeworkingbyyear = $timeworkingbyyear;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

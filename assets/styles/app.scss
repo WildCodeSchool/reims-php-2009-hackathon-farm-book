@@ -3,11 +3,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {   
+    background-color:#DCEBEF;
     font-family: 'Montserrat', sans-serif;   
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* CSS vehicle index page */
+
+.title-vehicle-index{
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-vehicle-index{
+    margin: 1px;
+    padding: 2rem;
+    background-color:  #002147;
+}
+
+.contenair-vehicule-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: 100%;
+    min-width: 65%;
+}
+
+.tuile-vehicle-index{
+    align-self: center;
+    font-size: 4rem;
+    height: 45rem;
+    width: 45rem;
+    background-color: #002147;
+    -webkit-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+    box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+}
+
+.picture-vehicle-index{
+    height: 100%;
+    width: 100%;
+}
+
+.picture-vehicle-index img{
+    height: 35rem;
+    width: 35rem;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+ul {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(1fr, minmax(400px, 1fr));
+}
+
+li {
+    margin: 1rem;
+    box-sizing: border-box;
+    text-align: center;        
+}
+/* fin CSS index vehicle */ 
 
 .logoimage {
     margin-top: 200px ;

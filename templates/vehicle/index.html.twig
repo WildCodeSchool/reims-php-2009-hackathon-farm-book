@@ -3,41 +3,65 @@
 {% block title %}Vehicle index{% endblock %}
 
 {% block body %}
-    <h1>Vehicle index</h1>
+<header>
+    <div class="header-vehicle-index">
+        <h1 class="title-vehicle-index">FARMBOOK</h1>
+    </div>
+</header>
+<h1 style="text-align: center; margin-top: 4rem; font-size: 4rem; color: #002147;">Mes véhicules</h1>
+<a style="display: flex; justify-content: flex-end; margin-right: 2rem;" href="{{ path('vehicle_new') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/add-image-icon.png') }}"></a>
+<div class="example-wrapper">
+    <ul>
+    {% for vehicle in vehicles %}
+        <li class="tuile-vehicle-index"><a style="text-decoration:none; color: white; font-size: 2.5rem;"href="{{ path('vehicle_show', {id: vehicle.id}) }}">{{ vehicle.name }}</a>
+    <div class='picture-vehicle-index'>
+    {% if vehicle.picture == NULL  %}
+            <img src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
+    {% else %}
+            <img src="{{ asset('/uploads/' ~ vehicle.picture) }}"/>
+    {% endif %}
+    </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+                                {# NE SUPPRIMER PAS CE QU'IL Y A EN COMMENTAIRE SVP !!!#}
+{# {% for vehicle in vehicles %}
+<div class="tuile-vehicle-index">
+    <table class="table-vehicle-index">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix d'achat</th>
+            <th>Prix de vente</th>
+            <th>Durée de vie moyenne</th>
+            <th>Temps d'utilisation moyenne à l'année</th>
+            <th>Modifier</th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Buyprice</th>
-                <th>Sellprice</th>
-                <th>Lifetime</th>
-                <th>Timeworkingbyyear</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for vehicle in vehicles %}
-            <tr>
-                <td>{{ vehicle.id }}</td>
-                <td>{{ vehicle.name }}</td>
-                <td>{{ vehicle.buyprice }}</td>
-                <td>{{ vehicle.sellprice }}</td>
-                <td>{{ vehicle.lifetime }}</td>
-                <td>{{ vehicle.timeworkingbyyear }}</td>
-                <td>
-                    <a href="{{ path('vehicle_show', {'id': vehicle.id}) }}">show</a>
-                    <a href="{{ path('vehicle_edit', {'id': vehicle.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <tr>
+            <td>{{ vehicle.id }}</td>
+            <td>{{ vehicle.name }}</td>
+            <td>{{ vehicle.buyprice }}</td>
+            <td>{{ vehicle.sellprice }}</td>
+            <td>{{ vehicle.lifetime }}</td>
+            <td>{{ vehicle.timeworkingbyyear }}</td>
+            <td>
+        <a href="{{ path('vehicle_show', {'id': vehicle.id}) }}">show</a>
+        <a href="{{ path('vehicle_edit', {'id': vehicle.id}) }}">edit</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="7">Aucun véhicule trouvé</td>
+        </tr>
 
-    <a href="{{ path('vehicle_new') }}">Create new</a>
+    </tbody>
+</table>
+<div>
+    {% endfor %}
+#}
 {% endblock %}

@@ -3,4 +3,69 @@
 body {
     background-color: $wild-color;
     color: $light-color;
+    margin: 0;
+    padding: 0;
+    background-color:#DCEBEF;
+}
+
+/* CSS vehicle index page */
+
+.title-vehicle-index{
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-vehicle-index{
+    margin: 1px;
+    padding: 2rem;
+    background-color:  #002147;
+}
+
+.contenair-vehicule-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: 100%;
+    min-width: 65%;
+}
+
+.tuile-vehicle-index{
+    align-self: center;
+    font-size: 4rem;
+    height: 45rem;
+    width: 45rem;
+    background-color: #002147;
+    -webkit-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+    box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
+}
+
+.picture-vehicle-index{
+    background-color: wheat;
+    height: 400%;
+    width: 400%;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+ul {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(1fr, minmax(400px, 1fr));
+}
+
+li {
+    margin: 1rem;
+    box-sizing: border-box;
+    text-align: center;        
 }

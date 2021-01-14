@@ -42,8 +42,10 @@
     <input type="password" name="password" id="inputPassword" placeholder="password" id="password" class="form-control" required>
 
     <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+
+           value="{{ csrf_token('authenticate') }}">
+    </div>
+
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.

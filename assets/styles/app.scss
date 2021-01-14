@@ -2,9 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body {   
+body {
     background-color:#DCEBEF;
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
@@ -73,9 +73,10 @@ ul {
 li {
     margin: 1rem;
     box-sizing: border-box;
-    text-align: center;        
+    text-align: center;
 }
-/* fin CSS index vehicle */ 
+/* fin CSS index vehicle */
+
 
 
 // REGISTER
@@ -106,6 +107,7 @@ li {
     display:flex  ;
     flex-direction: column ;
     align-content: center ;
+
 }
 
 .logofarmbook img{
@@ -121,6 +123,7 @@ li {
 
 .registerbutton {
     text-align: center;
+
 }
 
 .login {
@@ -241,5 +244,6 @@ input[type="submit"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
+
 
 

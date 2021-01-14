@@ -9,7 +9,10 @@
     </div>
 </header>
 <h1 style="text-align: center; margin-top: 4rem; font-size: 4rem; color: #002147;">Mes véhicules</h1>
-<a style="display: flex; justify-content: flex-end; margin-right: 2rem;" href="{{ path('vehicle_new') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/add-image-icon.png') }}"></a>
+<div style ="display: flex ; justify-content:space-around">
+<a style="margin-right: 2rem;" href="{{ path('app_logout') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/logout.png') }}"></a>
+<a style="margin-right: 2rem;" href="{{ path('vehicle_new') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/add-image-icon.png') }}"></a>
+</div>
 <div class="example-wrapper">
     <ul>
     {% for vehicle in vehicles %}

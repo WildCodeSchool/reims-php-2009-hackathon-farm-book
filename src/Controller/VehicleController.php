@@ -35,6 +35,7 @@ class VehicleController extends AbstractController
      */
     public function new(Request $request, FileUploader $fileUploader): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $vehicle = new Vehicle();
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
@@ -46,6 +47,7 @@ class VehicleController extends AbstractController
                 $vehicle->setPicture($pictureFileName);
 
             $entityManager = $this->getDoctrine()->getManager();
+            $vehicle->setUser($this->getUser());
             $entityManager->persist($vehicle);
             $entityManager->flush();
             }

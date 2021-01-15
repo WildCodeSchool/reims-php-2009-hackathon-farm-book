@@ -2,13 +2,21 @@
 
 {% block title %}Connexion!{% endblock %}
 
-{% block body %}
+
+ 
+
+{% block body %} 
+  
+<header>
+<div class="logopcea"><img src="{{ asset('/uploads/logopcea.png') }}" alt="vehicle"></div>
+</header>
 
 <form class="form" method="post">
-    {% if error %}
+    {% if error %}    
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    
+
+     
     <div class="registerbutton">
         <a class="btn btn-primary" href="{{ path('app_register') }}">
             Créer un compte

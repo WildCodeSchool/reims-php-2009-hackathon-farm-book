@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion!{% endblock %}
 
 {% block body %}
 
@@ -17,8 +17,6 @@
     {% endif %}
 
     <div class="containerlogos">
-        <div class="logofarmbook"> <img src="{{ asset('/uploads/logo.png') }}" alt="logo1">
-        </div>
         <div class="logopcea"><img src="{{ asset('/uploads/logopcea.png') }}" alt="vehicle">
         </div>
      </div>
@@ -26,7 +24,7 @@
     
     
     <div class="registerbutton">
-    <a href="{{ path('app_register') }}"><button class="btn btn-lg btn-primary" type="submit">
+    <a href="{{ path('app_register') }}"><button class="signupBTN" type="submit">
         Créer un compte
     </button></a>
      </div>
@@ -44,7 +42,7 @@
     <input type="hidden" name="_csrf_token"
 
            value="{{ csrf_token('authenticate') }}">
-            <input type="submit" value="Sign In">
+            <input type="submit" value="Se connecter">
     </div>
     </div>
 

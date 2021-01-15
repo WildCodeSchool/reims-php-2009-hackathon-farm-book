@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vehicle{% endblock %}
+{% block title %}Mon Vehicule{% endblock %}
 
 {% block body %}
-    <h1>Vehicle</h1>
+    <h1>Mon Vehicule</h1>
     <div>
     {% if vehicle.picture == NULL  %}
             <img class='Vehicleshow' src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
@@ -43,9 +43,9 @@
     Coût à l'heure avec MO :  {% set hourcost =( hourcost + 18 )  %} {{ hourcost}}
     </p>
 
-    <a href="{{ path('vehicle_index') }}">back to list</a>
+    <a href="{{ path('vehicle_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('vehicle_edit', {'id': vehicle.id}) }}">edit</a>
+    <a href="{{ path('vehicle_edit', {'id': vehicle.id}) }}">éditer</a>
 
     {{ include('vehicle/_delete_form.html.twig') }}
 {% endblock %}

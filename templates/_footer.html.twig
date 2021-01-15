@@ -1,49 +1,43 @@
 {% block footer %}
+    <div class="containerlogos">
+        <div class="logopcea"><img src="{{ asset('/uploads/logopcea.png') }}" alt="vehicle">
+        </div>
+    </div>
     <footer class="site-footer">
-     <div id="container">
-         <div id="part1">
-             <div id="companyinfo"> <a id="sitelink" href="#">WIZIFARM</a>
-                 <p id="title">FarmBook, Hackathon Wild Code School Reims 2021</p>
-                 <p id="detail">LOREM ISPUM pour présenter WIZIFARM</p>
-             </div>
-             <div id="explore">
-                 <p id="txt1">Explorez</p> <a class="link" href="/">Home</a> <a class="link" href="#">Wild Code School</a><br><a class="link" href="#">Wizifarm</a>
-             </div>
-             <div id="visit">
-                 <p id="txt2">L'équipe de développement</p>
-                 <p class="text">Olivier Preaux</p>
-                 <p class="text">Bruno Lagasse </p>
-                 <p class="text">Thomas Gillet </p>
-                 <p class="text">Steve Crepin</p>
-             </div>
-             <div id="legal">
-             <div>
+        <div id="companyinfo"> <a id="sitelink" href="#">WIZIFARM</a>
+            <p id="title">FarmBook, Hackathon Wild Code School Reims 2021</p>
+            <p id="detail">LOREM ISPUM pour présenter WIZIFARM</p>
+        </div>
+        <ul id="explore">
+            <li>Explorez</li>
+            <li><a class="link" href="/">Home</a></li>
+            <li><a class="link" href="#">Wild Code School</a></li>
+            <li><a class="link" href="#">Wizifarm</a></li>
+        </ul>
+        <div id="legal">
+            <p id="txt2">L'équipe de développement</p>
             <div class="dev1">
-            <p >Olivier Preaux</p>
-            <a href="https://github.com/" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt ="GitHub Oliver Preaux"></a>
-            <a href="https://www.linkedin.com/in/olivier-preaux-b492b31b8/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="Linked In Olivier Preaux"></a>
-             </div>
+                <p >Olivier Preaux</p>
+                <a href="https://github.com/" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt ="GitHub Oliver Preaux"></a>
+                <a href="https://www.linkedin.com/in/olivier-preaux-b492b31b8/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="Linked In Olivier Preaux"></a>
+            </div>
 
-             <div="dev2">
-             <p>Bruno Lagasse </p>
-            <a href="https://github.com/BrunoLagasse" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}"alt ="GitHub Bruno Lagasse"></a>
-            <a href="https://www.linkedin.com/in/bruno-lagasse-8a699716a/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Bruno Lagasse"></a>
+            <div class="dev2">
+                <p>Bruno Lagasse </p>
+                <a href="https://github.com/BrunoLagasse" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}"alt ="GitHub Bruno Lagasse"></a>
+                <a href="https://www.linkedin.com/in/bruno-lagasse-8a699716a/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Bruno Lagasse"></a>
             </div>
             <div class="dev3">
-            <p>Thomas Gillet </p>
-            <a href="https://github.com/" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt ="GitHub Thomas Gillet" ></a>
-            <a href="https://www.linkedin.com/in/thomas-gillet-59ba851a1/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Thomas Gillet"></a>
-           </div>
-            <div class="dev4">
-             <p>Steve Crepin</p>
-             <a href="https://github.com/Schyzofrania" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt="GitHub Steve Crepin"></a>
-             <a href="https://www.linkedin.com/in/steve-crepin-/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Steve Crepin"></a>
-             </div>
+                <p>Thomas Gillet </p>
+                <a href="https://github.com/" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt ="GitHub Thomas Gillet" ></a>
+                <a href="https://www.linkedin.com/in/thomas-gillet-59ba851a1/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Thomas Gillet"></a>
             </div>
-         </div>
-         <div id="part2">
-             <p id="txt6"><i class="material-icons tiny">© 2021 Promotion Horizon | Wild Code School Reims - Tous droits réservés</p>
-         </div>
-     </div>
+            <div class="dev4">
+                <p>Steve Crepin</p>
+                <a href="https://github.com/Schyzofrania" target="_blank"><img class="gitLogoFooter" src="{{ asset('build/images/github.png') }}" alt="GitHub Steve Crepin"></a>
+                <a href="https://www.linkedin.com/in/steve-crepin-/" target="_blank"><img class="linkedinLogo" src="{{ asset('build/images/linkedin.png') }}" alt="LinkedIn Steve Crepin"></a>
+            </div>
+        </div>
 </footer>
+<p id="copyright">© 2021 Promotion Horizon | Wild Code School Reims - Tous droits réservés</p>
 {% endblock %}

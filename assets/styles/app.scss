@@ -26,8 +26,7 @@ img {
 /* CSS vehicle index page */
 
 .tuile-vehicle-index{
-    align-self: center;
-    font-size: 2rem;
+    align-self: center;    
     background-color: #002147;
     -webkit-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
     -moz-box-shadow: 10px 3px 9px 3px rgba(0,0,0,1);
@@ -35,6 +34,7 @@ img {
 }
 
 .picture-vehicle-index{
+    padding: 5px;
 }
 
 .picture-vehicle-index img{
@@ -43,9 +43,10 @@ img {
 }
 
 .example-wrapper {
+    font-size: 1.3rem;
     margin: 1em auto;
     max-width: 800px;
-    font: 18px/1.5 sans-serif;
+    ;
 }
 
 ul {
@@ -128,10 +129,10 @@ li {
 
 .form {
   border-radius: 12px 12px 4px 4px;
-  box-shadow: 0 0 20px 10px #42464b;
+  box-shadow: 0 0 20px 10px #aaacad;
   margin: 0 auto;
   background-color: #eceeee;
-  border: 1px solid #42464b;
+  border: 1px solid #6c7279;
   border-radius: 6px;
   padding: 1rem;
 }

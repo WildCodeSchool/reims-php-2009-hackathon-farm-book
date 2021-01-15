@@ -18,14 +18,18 @@ class VehicleType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label'  => 'name',
+                'label'  => 'Marque du modèle',
                 'attr'   =>  array(
                     'class'   => 'input-form')
                 ))
-            ->add('buyprice', IntegerType::class)
-            ->add('sellprice', IntegerType::class)
-            ->add('lifetime', IntegerType::class)
-            ->add('timeworkingbyyear', IntegerType::class)
+            ->add('buyprice', IntegerType::class, array(
+                'label'  => 'Prix d\'achat'))
+            ->add('sellprice', IntegerType::class, array(
+                'label'  => 'Prix de revente estimé'))
+            ->add('lifetime', IntegerType::class, array(
+                'label'  => 'Temps estimé en année'))
+            ->add('timeworkingbyyear', IntegerType::class, array(
+                'label'  => 'Travail H/année'))
             ->add('picture', FileType::class, [
                 'label' => 'Picture (jpg, jpeg, png, webp)',
                 'required' => false,
@@ -42,10 +46,10 @@ class VehicleType extends AbstractType
                 ],
             ]);
             $builder->get('picture')->addModelTransformer(new CallBackTransformer(
-                function($picture) {
+                function ($picture) {
                     return null;
                 },
-                function($picture) {
+                function ($picture) {
                     return $picture;
                 }
             ))

@@ -3,15 +3,16 @@
 {% block title %}Mes véhicules{% endblock %}
 
 {% block body %}
-<h1 style="text-align: center; margin: 0; font-size: 4rem; color: #002147;">Mes véhicules</h1>
+
 <div style ="display: flex ; justify-content:space-around">
-    <a href="{{ path('app_logout') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/logout.png') }}"></a>
-    <a href="{{ path('vehicle_new') }}"><img style="height: 6rem; width: 6rem;"src="{{ asset('build/images/add-image-icon.png') }}"></a>
+    <a href="{{ path('app_logout') }}"><img style="height: 3rem; width: 3rem;"src="{{ asset('build/images/logout.png') }}"></a>
+    <a href="{{ path('vehicle_new') }}"><img style="height: 3rem; width: 3rem;"src="{{ asset('build/images/add-image-icon.png') }}"></a>
 </div>
+<h1 style="text-align: center; margin: 0; font-size: 3rem; color: #002147;">Mes véhicules</h1>
 <div class="example-wrapper">
     <ul>
     {% for vehicle in vehicles %}
-        <li class="tuile-vehicle-index"><a style="text-decoration:none; color: white; font-size: 2.5rem;"href="{{ path('vehicle_show', {id: vehicle.id}) }}">{{ vehicle.name }}</a>
+        <li class="tuile-vehicle-index"><a style="text-decoration:none; color: white"href="{{ path('vehicle_show', {id: vehicle.id}) }}">{{ vehicle.name }}</a>
     <div class='picture-vehicle-index'>
     {% if vehicle.picture == NULL  %}
             <img src="{{ asset('/uploads/tracteur.jpg') }}" alt="vehicle">
@@ -22,6 +23,7 @@
     </li>
     {% endfor %}
     </ul>
+    
 </div>
                                 {# NE SUPPRIMER PAS CE QU'IL Y A EN COMMENTAIRE SVP !!!#}
 {# {% for vehicle in vehicles %}
